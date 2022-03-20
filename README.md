@@ -34,7 +34,7 @@ A template for python projects made using cookiecutter.
   - R code that involves analysis on already-cleaned data. Code for cleaning data should go in `etl`.
   - Multiple analysis files are numbered sequentially.
     - `analysis/notebooks`
-      - Any R Markdown files go here.
+      - Any Jupyter Notebooks go here.
 - `data`
   - This is the directory used to store all of the project's data. All files should go into one of the following folders.
   - `data/external`
