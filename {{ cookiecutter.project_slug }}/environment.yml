@@ -1,0 +1,26 @@
+# conda env create --file environment.yml
+# mamba env create --file environment.yml
+name: {{ cookiecutter.project_slug }}
+channels:
+  - anaconda
+  - conda-forge
+  - defaults
+dependencies:
+  - python={{ cookiecutter.python_version }}
+  - fs
+  - jupyter
+  - jupyterlab
+  - markupsafe=2.0.1
+  - pathlib
+  - pip
+  - pyprojroot
+  - pip:
+    - pyhere
+  - numpy 
+  - pandas
+  - matplotlib
+  - seaborn
+  {% if cookiecutter.project_packages == "Machine Learning" -%}
+  - scikit-learn
+  - tensorflow
+  {% endif -%}
