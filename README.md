@@ -111,7 +111,7 @@ conda activate ENVIRONMENT_NAME
 
 > Both `DIRECTORY_NAME` and `ENVIRONMENT_NAME` correspond to the project's slug name, defined when creating the template.
 
-### Set up prohect's module
+### Set up project's module
 
 In order to set up the project's module, in the terminal run:
 
@@ -122,7 +122,7 @@ pip install -e ../
 Or if you are in a notebook, run in a code cell:
 
 ```shell
-! pip install -e --/
+! pip install -e ../
 ```
 
 To use the module inside the notebook, add the following to the first cell:
