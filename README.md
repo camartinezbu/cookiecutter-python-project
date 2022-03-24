@@ -5,21 +5,24 @@ A template for python projects made using cookiecutter.
     .
     ├── LICENSE
     ├── environment.yml
-    ├── .Rprofile
     ├── .gitignore
     ├── README.md
-    ├── analysis
-    │   └── notebooks
+    ├── setup.py
     ├── data
     │   ├── external
     │   ├── interim
     │   ├── processed
     │   └── raw
-    ├── etl
-    ├── reports
+    ├── figures
+    ├── notebooks
     ├── references
-    ├── viz
-        └── figures
+    ├── reports
+    ├── src
+        ├── init.py
+        ├── analysis
+        ├── etl
+        ├── utils
+        └── viz
 
 - `LICENSE`
   - License file for the project.
@@ -30,11 +33,8 @@ A template for python projects made using cookiecutter.
   - Ignores python user profile temporary files.
 - `README.md`
   - Project specific readme.
-- `analysis`
-  - R code that involves analysis on already-cleaned data. Code for cleaning data should go in `etl`.
-  - Multiple analysis files are numbered sequentially.
-    - `analysis/notebooks`
-      - Any Jupyter Notebooks go here.
+- `setup.py`
+  - Makes project pip installable with `pip install -e ../`.
 - `data`
   - This is the directory used to store all of the project's data. All files should go into one of the following folders.
   - `data/external`
@@ -45,20 +45,31 @@ A template for python projects made using cookiecutter.
     - The final, canonical data sets for analysis.
   - `data/raw`
     - The original, inmutable data dump.
-- `etl`
-  - ETL (extract, transform, load) scripts for reading in source data, cleaning and standardizing it to prepare for analysis go here.
-    - Multiple ETL files are numbered sequentially.
-    - Joins are included in ETL process.
-- `reports`
-  - Generated analysis as HTML, PDF, LaTeX, etc.
+- `figures`
+  - Generated graphics and figures to be used in reporting.
+- `notebooks`
+  - Any Jupyter Notebooks go here.
 - `references`
   - Data dictionaries, manuals, and all other exploratory materials.
-- `viz`
-  - Graphics and visualization development specific work should go here.
+- `reports`
+  - Generated analysis as HTML, PDF, LaTeX, etc.
+- `src`
+  - All the scripts in the project go here.
+  - `src/__init__.py`
+    - Makes `src` a Python module.
+  - `src/analysis`
+    - Code that involves analysis on already-cleaned data. Code for cleaning data should go in `src/etl`.
+    - Multiple analysis files are numbered sequentially.
+  - `src/etl`
+  - ETL (extract, transform, load) scripts for reading in source data, cleaning and standardizing it to prepare for analysis go here.
+    - Joins are included in ETL process.
+    - Multiple ETL files are numbered sequentially.
+  - `src/utils`
+    - Miscellaneous code goes here.
+  - `src/viz`
+    - Graphics and visualization development specific work should go here.
     - Multiple viz files are numbered sequentially.
-  - `viz/figures`
-    - Generated graphics and figures to be used in reporting.
-
+  
 
 ## Requirements
 
@@ -99,6 +110,27 @@ conda activate ENVIRONMENT_NAME
 ```
 
 > Both `DIRECTORY_NAME` and `ENVIRONMENT_NAME` correspond to the project's slug name, defined when creating the template.
+
+### Set up prohect's module
+
+In order to set up the project's module, in the terminal run:
+
+```shell
+pip install -e ../
+```
+
+Or if you are in a notebook, run in a code cell:
+
+```shell
+! pip install -e --/
+```
+
+To use the module inside the notebook, add the following to the first cell:
+
+```shell
+%load_ext autoreload
+%autoreload 2
+```
 
 ## Credits
 
