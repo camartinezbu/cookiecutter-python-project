@@ -61,7 +61,7 @@ A template for python projects made using cookiecutter.
     - Code that involves analysis on already-cleaned data. Code for cleaning data should go in `src/etl`.
     - Multiple analysis files are numbered sequentially.
   - `src/etl`
-  - ETL (extract, transform, load) scripts for reading in source data, cleaning and standardizing it to prepare for analysis go here.
+    - ETL (extract, transform, load) scripts for reading in source data, cleaning and standardizing it to prepare for analysis go here.
     - Joins are included in ETL process.
     - Multiple ETL files are numbered sequentially.
   - `src/utils`
