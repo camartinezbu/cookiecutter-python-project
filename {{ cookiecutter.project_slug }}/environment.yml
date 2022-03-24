@@ -20,7 +20,9 @@ dependencies:
   - pandas
   - matplotlib
   - seaborn
-  {% if cookiecutter.project_packages == "Machine Learning" -%}
+  {% if cookiecutter.project_packages == "Scikit-learn" -%}
   - scikit-learn
+  {% endif -%}
+  {% if cookiecutter.project_packages == "Tensorflow" -%}
   - tensorflow
   {% endif -%}

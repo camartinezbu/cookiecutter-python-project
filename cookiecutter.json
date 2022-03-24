@@ -5,5 +5,5 @@
     "project_description": "A short description of the project.",
     "project_open_source_license": ["No license file", "MIT", "BSD-3-Clause"],
     "python_version": "3.10",
-    "project_packages": ["Basic", "Machine Learning"]
+    "project_packages": ["Basic", "Scikit-learn", "Tensorflow"]
 }
