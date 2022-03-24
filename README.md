@@ -17,8 +17,8 @@ A template for python projects made using cookiecutter.
     ├── notebooks
     ├── references
     ├── reports
-    ├── src
-        ├── init.py
+    └── src
+        ├── __init__.py
         ├── analysis
         ├── etl
         ├── utils
